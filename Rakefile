@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/madrailers/visual-environments"
   gem.license = "MIT"
   gem.summary = %Q{Automatic visual, in-browser cues about your current environment}
-  gem.description = %Q{This gem provides a configurable means for showing, via an updated &lt;title&gt; tag or CSS corner banner, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and for all other environments you can exclude specific ones.}
+  gem.description = %Q{This gem provides a configurable means for showing, via an updated <title> tag or CSS corner banner, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and for all other environments you can exclude specific ones.}
   gem.email = "whazzmaster@gmail.com"
   gem.authors = ["Zachery Moneypenny, David van Leeuwen"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
