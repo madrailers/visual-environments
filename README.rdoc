@@ -4,9 +4,9 @@ Automatic visual, in-browser cues about your current environment in Rails 3 appl
 
 If you're a developer accustomed to working across multiple development and staging environments, you have certainly been in the position where you have multiple browser windows/tabs open with the same site but pointing at different environments.  This gem aims to help you keep your contexts straight!
 
-This is a configurable means for showing, via an updated &lt;title&gt; tag or CSS corner banner, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and fully configurable to exclude other environments as well.
+This is a configurable means for showing, via an updated <title> tag or CSS corner banner overlay, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and fully configurable to exclude other environments as well.
 
-== Install & Configuration
+= Install & Configuration
 
 Add the following to your Rails app Gemfile
 
@@ -20,11 +20,8 @@ There should now be a new file <tt>config/initializers/visual-environments.rb</t
 
 	ActionController::Base::VisualEnvironments.enable_env_in_title = true
 
-	# By default, the corner banner is disabled
-	ActionController::Base::VisualEnvironments.enable_env_in_corner_banner = false
-	# By default, if the corner banner is enabled it is shown on the right side of the page.  For
-	# those pages where it would be better for it to reside in the upper-left corner, uncomment
-	# the line below and change the argument to :left.  Current possible values are (:right, :left)
+	# Uncomment he line below and select which side to display the banner on.  Current possible 
+	# values are (:right, :left) corresponding to upper-right and upper-left corners, respectively
 	# ActionController::Base::VisualEnvironments.corner_banner_side = :right
 
 	# By default, the full environment name is used in the visual cues (development, test, etc.)  You
@@ -38,7 +35,7 @@ There should now be a new file <tt>config/initializers/visual-environments.rb</t
 	
 By default, visual environments are enabled in the page title but disabled for corner banner display.  Also, by default only production environments are excluded from the gem functionality. 
 
-=== Excluding Environments
+== Excluding Environments
 
 You can add additional environments to be excluded by adding their names to the <tt>excluded_environments</tt> collection.  For example, let's say you have an app with a test-oriented staging environment as well as a 'almost-ready-for-prime-time' preproduction environment.  In this case you may want the visual cues on the staging but not on preproduction.  In that case you can edit the initializer to:
 
@@ -50,13 +47,15 @@ Another way to configure is by using Gemfile groups to only conditionally load t
 
 	gem 'visual-evironments', :groups => [:development, :staging]
 	
-=== Changing the Side of the Banner
+== Corner Banner & Changing the Side of the Banner
 
-The corner banner is displayed in the upper-right corner of the screen by default.  Some sites, however, may be designed such that a banner in that area would hamper functionality (by covering links, for example).  In that case you can switch the banner to the left side by uncommenting and setting the following line in <tt>config/initializers/visual-environments.rb</tt>:
+The corner banner is not included by default.  To enable it, choose which side it should be displayed on via the <tt>corner_banner_side</tt> option in <tt>config/initializers/visual-environments.rb</tt>:
 
 	ActionController::Base::VisualEnvironments.corner_banner_side = :right
+
+Valid options are currently <tt>:left</tt> and <tt>:right</tt>, corresponding to the upper-left and upper-right corners, respectively.
 	
-=== Aliasing Environment Names
+== Aliasing Environment Names
 
 Having the string "[development]" prepended to your title may make things a bit unwieldy for some people.  In that case, you may use the aliasing option to change such an identifier to something shorter (but still identifiable with the environment in question).  For example, you can alias 'development' to 'dev' or 'D', which would result in "[dev]" or "[D]" being prepended to the page title.
 
@@ -78,8 +77,7 @@ The above example would show use 'dev' in a development environment and 'preprod
 
 == Copyright
 
-Copyright (c) 2011 Zachery Moneypenny, David van Leeuwen. See LICENSE.txt for
-further details.  
+Copyright (c) 2011 Zachery Moneypenny, David van Leeuwen. See LICENSE.txt for further details.  
 
 Big Ups to the Mad-Railers for their idea for this gem! If you're coding Ruby/Rails in the Madison, Wisconsin area search for MadRailers on meetup.com or check out the Google Group at http://groups.google.com/group/Mad-Railers
 

@@ -1,11 +1,8 @@
 ActionController::Base::VisualEnvironments.enable_env_in_title = true
 
-# By default, the corner banner is disabled
-ActionController::Base::VisualEnvironments.enable_env_in_corner_banner = false
-# By default, if the corner banner is enabled it is shown on the right side of the page.  For
-# those pages where it would be better for it to reside in the upper-left corner, uncomment
-# the line below and change the argument to :left.  Current possible values are (:right, :left)
-# ActionController::Base::VisualEnvironments.corner_banner_side = :right
+# Uncomment he line below and select which side to display the banner on.  Current possible 
+# values are (:right, :left) corresponding to upper-right and upper-left corners, respectively
+ActionController::Base::VisualEnvironments.corner_banner_side = :right
 
 # By default, the full environment name is used in the visual cues (development, test, etc.)  You
 # can map environment names by using the below setting to alias one environment name to another
