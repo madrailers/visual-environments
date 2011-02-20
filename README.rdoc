@@ -8,19 +8,19 @@ This is a configurable means for showing, via an updated <title> tag or CSS corn
 
 = Install & Configuration
 
-Add the following to your Rails app Gemfile
+Add the following to your Rails application's Gemfile
 
 	gem 'visual-environments'
 	
 ...and run <tt>bundle install</tt>.  Then use the visual-environments generator to install the configuration file to your <tt>config/initializers</tt> directory:
 
- rails g visual_environments:install
+	rails g visual_environments:install
 
 There should now be a new file <tt>config/initializers/visual-environments.rb</tt> with the content
 
 	ActionController::Base::VisualEnvironments.enable_env_in_title = true
 
-	# Uncomment he line below and select which side to display the banner on.  Current possible 
+	# Uncomment the line below and select which side to display the banner on.  Current possible 
 	# values are (:right, :left) corresponding to upper-right and upper-left corners, respectively
 	# ActionController::Base::VisualEnvironments.corner_banner_side = :right
 
@@ -43,7 +43,7 @@ You can add additional environments to be excluded by adding their names to the 
 	
 And now preproduction will not use the visual-environments functionality.
 
-Another way to configure is by using Gemfile groups to only conditionally load this gem.  For example, if you have many different environments but only want this gem to operate in development and staging, for example, you can edit your Gemfile thusly:
+Another way to configure is by using Gemfile groups to only conditionally load this gem.  For example, if you have many different environments but only want this gem to operate in development and staging you can edit your Gemfile thusly:
 
 	gem 'visual-evironments', :groups => [:development, :staging]
 	
