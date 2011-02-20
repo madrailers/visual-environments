@@ -6,7 +6,7 @@ If you're a developer accustomed to working across multiple development and stag
 
 This is a configurable means for showing, via an updated &lt;title&gt; tag or CSS corner banner, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and fully configurable to exclude other environments as well.
 
-== Install &amp; Configuration
+== Install & Configuration
 
 Add the following to your Rails app Gemfile
 
