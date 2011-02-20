@@ -5,7 +5,7 @@ module VisualEnvironments
     class InstallGenerator < Rails::Generators::Base
     
       def copy_initializer_file
-        copy_file File.join(File.dir(__FILE__), "templates/initializer.rb"), "config/initializers/visual-environment.rb"
+        copy_file File.expand_path("../templates/initializer.rb", __FILE__), "config/initializers/visual-environment.rb"
       end
 
       def self.banner

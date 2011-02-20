@@ -13,12 +13,12 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "visual-environments"
-  gem.homepage = "http://github.com/whazzmaster/visual-environments"
+  gem.homepage = "http://github.com/madrailers/visual-environments"
   gem.license = "MIT"
   gem.summary = %Q{Automatic visual, in-browser cues about your current environment}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{This gem provides a configurable means for showing, via an updated &lt;title&gt; tag or CSS corner banner, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and for all other environments you can exclude specific ones.}
   gem.email = "whazzmaster@gmail.com"
-  gem.authors = ["Zachery Moneypenny"]
+  gem.authors = ["Zachery Moneypenny, David van Leeuwen"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'

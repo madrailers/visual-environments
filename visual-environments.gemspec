@@ -5,22 +5,41 @@
 
 Gem::Specification.new do |s|
   s.name = %q{visual-environments}
-  s.version = "0.0.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Zachery Moneypenny, David van Leeuwen, Mad-Railers"]
-  s.date = %q{2011-02-19}
-  s.description = %q{Allows you to configure visual cues as to which non-production environments you are currently viewing in the browser.  Examples includes prepending the environment name to the page title, and displaying a corner banner with the environment name.  This is all configurable via an initializer.}
+  s.authors = ["Zachery Moneypenny, David van Leeuwen"]
+  s.date = %q{2011-02-20}
+  s.description = %q{This gem provides a configurable means for showing, via an updated &lt;title&gt; tag or CSS corner banner, what the current runtime environment is (development, staging, test, etc.)  This functionality is never enabled for production, and for all other environments you can exclude specific ones.}
   s.email = %q{whazzmaster@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
-  s.homepage = %q{https://github.com/madrailers/visual-environments}
+  s.files = [
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE.txt",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION",
+    "lib/generators/visual_environments/USAGE",
+    "lib/generators/visual_environments/install_generator.rb",
+    "lib/generators/visual_environments/templates/initializer.rb",
+    "lib/visual-environments.rb",
+    "spec/spec_helper.rb",
+    "spec/visual-environments_spec.rb",
+    "visual-environments.gemspec"
+  ]
+  s.homepage = %q{http://github.com/madrailers/visual-environments}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.2}
   s.summary = %q{Automatic visual, in-browser cues about your current environment}
+  s.test_files = [
+    "spec/spec_helper.rb",
+    "spec/visual-environments_spec.rb"
+  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
