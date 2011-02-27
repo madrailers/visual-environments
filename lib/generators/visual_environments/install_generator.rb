@@ -3,9 +3,13 @@ require 'rails/generators/base'
 module VisualEnvironments
   module Generators
     class InstallGenerator < Rails::Generators::Base
+      
+      def self.source_root
+        @source_root ||= File.join(File.dirname(__FILE__), 'templates')
+      end
     
       def copy_initializer_file
-        copy_file File.expand_path("../templates/initializer.rb", __FILE__), "config/initializers/visual-environment.rb"
+        copy_file "initializer.rb", "config/initializers/visual-environment.rb"
       end
 
       def self.banner
