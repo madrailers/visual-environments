@@ -8,10 +8,10 @@ This is a configurable means for showing, via an updated <title> tag or CSS corn
 
 == Changelog
 
-	* 5 March, 2011: Changed format of initializer, added ability to alias title and corner banner strings independently, refactored internal structure of the module, updated docs.  This is a NON-BACKWARDS COMPATIBLE update; you must rerun <tt>rails g visual_environments:install</tt> to regenerate a new initializer file and then reset your options.
-	* 27 February, 2011: Updated source_root definition, fixing bug in initializer
-	* 20 February, 2011: Added generator, documented configuration options, added ability to switch corner banner from left to right side
-	* 19 February, 2011: Initial revision- a result of the MadRailers Coding Day!
+* 5 March, 2011: Changed format of initializer, added ability to alias title and corner banner strings independently, refactored internal structure of the module, updated docs.  This is a NON-BACKWARDS COMPATIBLE update; you must rerun <tt>rails g visual_environments:install</tt> to regenerate a new initializer file and then reset your options.
+* 27 February, 2011: Updated source_root definition, fixing bug in initializer
+* 20 February, 2011: Added generator, documented configuration options, added ability to switch corner banner from left to right side
+* 19 February, 2011: Initial revision- a result of the MadRailers Coding Day!
 
 = Install & Configuration
 
