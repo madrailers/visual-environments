@@ -9,7 +9,7 @@ module VisualEnvironments
       end
     
       def copy_initializer_file
-        copy_file "initializer.rb", "config/initializers/visual-environment.rb"
+        copy_file "initializer.rb", "config/initializers/visual-environments.rb"
       end
 
       def self.banner

@@ -4,7 +4,7 @@ VisualEnvironments.setup do |config|
 
   # Uncomment he line below and select which side to display the banner on.  Current possible 
   # values are (:right, :left) corresponding to upper-right and upper-left corners, respectively
-  config.corner_banner_side = :right
+  # config.corner_banner_side = :right
 
   # By default, the full environment name is used in the visual cues (development, test, etc.)  You
   # can map environment names by using the below setting to alias one environment name to another.
