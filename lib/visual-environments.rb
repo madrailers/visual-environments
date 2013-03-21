@@ -40,6 +40,9 @@ module VisualEnvironments
  def shim_visual_environments
    unless Rails.env == 'production' || (VisualEnvironments.excluded_environments && VisualEnvironments.excluded_environments.include?(Rails.env))
      
+     # Only mess with HTML
+     return unless response.content_type == 'text/html'
+     
      if VisualEnvironments.enable_env_in_title
        current_env = Rails.env
        current_env = VisualEnvironments.title_aliases[current_env] if !VisualEnvironments.title_aliases.nil? && VisualEnvironments.title_aliases.has_key?(current_env)
