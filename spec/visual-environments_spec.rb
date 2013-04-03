@@ -106,8 +106,15 @@ describe MyController do
       get :index
       response.body.should_not contain( sprintf(@corner_banner_format, Rails.env) )
     end
-    
-    
+
+
+
+    it 'should only display if the response is HTML' do
+      VisualEnvironments.stub(:corner_banner_side).and_return(:right)
+      get :image
+      response.body.should_not contain( sprintf(@corner_banner_format, Rails.env) )
+    end
+
   end
   
   

@@ -18,5 +18,10 @@ class MyController < ActionController::Base
     MYHTML
     render :text => html
   end
+  
+  def image
+    send_data 'some image', type: 'image/gif', disposition: 'inline'
+  end
+
 end
 
