@@ -25,6 +25,7 @@ VisualEnvironments.setup do |config|
   # The following layout defaults can alow be overridden
   #
   # config.banner_font = "Verdana"
+  # config.banner_font_size = "10px"
   # config.banner_foreground_colour = "#fff"
   # config.banner_background_colour = "#000"
   # config.banner_zindex = 1040
