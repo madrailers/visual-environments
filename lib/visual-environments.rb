@@ -23,6 +23,26 @@ module VisualEnvironments
  mattr_accessor :excluded_environments
  @@excluded_environments = []
  
+ # The font to render the banner text
+ mattr_accessor :banner_font
+ @@banner_font = "Verdana"
+
+ # The font size for the banner text
+ mattr_accessor :banner_font_size
+ @@banner_font = "10px"
+ 
+ # The text colour of the banner
+ mattr_accessor :banner_foreground_colour
+ @@banner_foreground_colour = "#fff"
+
+ # The background color of the banner
+ mattr_accessor :banner_background_colour
+ @@banner_background_colour = "#000"
+ 
+ # The z-index of the banner
+ mattr_accessor :banner_zindex
+ @@banner_zindex = 1040
+
  # Use setup with a block to configure the module in an initializer;
  # run 'rails generate visual_environments:install' to create a default
  # initializer
@@ -58,9 +78,9 @@ module VisualEnvironments
        shim = "<script type='text/javascript'>var con=document.createElement('div');con.id='VisualEnvironment_container';document.body.appendChild(con);var ce=document.createElement('div');ce.id='VisualEnvironment_corner';ce.innerHTML='"+current_env+"';con.appendChild(ce);</script>"
        
        if VisualEnvironments.corner_banner_side == :right
-         shim += "<style>#VisualEnvironment_corner{position:absolute;top:20px;right:-35px;font-family:Verdana;font-size:10px;color:#fff;padding:9px;width:120px;text-align:center;background:#000;border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);}#VisualEnvironment_container{position:absolute;top:0;right:0;width:120px;height:93px;overflow:hidden;}</style>"
+         shim += "<style>#VisualEnvironment_corner{position:absolute;top:20px;right:-35px;font-family:#{@@banner_font};font-size:#{@@banner_font_size};color:#{@@banner_foreground_colour};padding:9px;width:120px;text-align:center;background:#{@@banner_background_colour};border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);}#VisualEnvironment_container{position:absolute;top:0;right:0;width:120px;height:93px;overflow:hidden;z-index:#{@@banner_zindex}}</style>"
        elsif VisualEnvironments.corner_banner_side == :left
-         shim += "<style>#VisualEnvironment_corner{position:absolute;top:20px;left:-35px;font-family:Verdana;font-size:10px;color:#fff;padding:9px;width:120px;text-align:center;background:#000;border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}#VisualEnvironment_container{position:absolute;top:0;left:0;width:120px;height:93px;overflow:hidden;}</style>"
+         shim += "<style>#VisualEnvironment_corner{position:absolute;top:20px;left:-35px;font-family:#{@@banner_font};font-size:#{@@banner_font_size};color:#{@@banner_foreground_colour};padding:9px;width:120px;text-align:center;background:#{@@banner_background_colour};border:#fff 1px solid;filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}#VisualEnvironment_container{position:absolute;top:0;left:0;width:120px;height:93px;overflow:hidden;z-index:#{@@banner_zindex}}</style>"
        end
        shim += "</body>"
        response.body = response.body.gsub /\<\/body\>/, shim

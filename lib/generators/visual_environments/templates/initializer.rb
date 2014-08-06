@@ -21,4 +21,12 @@ VisualEnvironments.setup do |config|
   # By default, the visual-environments will be enabled for all environments except production;
   # to exclude additional environments, uncomment the line below and add them to the collection
   # config.excluded_environments = []
+
+  # The following layout defaults can alow be overridden
+  #
+  # config.banner_font = "Verdana"
+  # config.banner_font_size = "10px"
+  # config.banner_foreground_colour = "#fff"
+  # config.banner_background_colour = "#000"
+  # config.banner_zindex = 1040
 end
